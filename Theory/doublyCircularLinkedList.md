@@ -33,6 +33,27 @@ Head ⇄ [Prev | Data | Next] ⇄ [Prev | Data | Next] ⇄ ... ⇄ [Prev | Data 
 | Search | Search forward or backward |
 | Reverse | Swap next and prev pointers for all nodes; update head pointer |
 
+## How Searching Works
+
+1. Start from the head node.
+2. Compare the current node’s data with the key.
+3. Move forward using the next pointer.
+4. Continue until:
+    1. Key is found → search successful
+5. You return to head → key not found
+
+## Time & Space Complexity
+| Operation | Average | Worst Case |
+|----------|----------|-------------|
+| Search Forward/Backward | O(n) | O(n) |
+| Insert at Beginning | O(1) | O(1) |
+| Insert at Ending | O(1) | O(1) |
+| Delete at Beginning | O(1) | O(1) |
+| Delete at Ending | O(1) | O(1) |
+| Traverse Forward/Backward | O(n) | O(n) |
+
+> Because each node has both next and prev pointers, boundary operations are O(1).
+
 ## Advantage
 - Can traverse both forward and backward
 - Useful for **navigation systems**, **playlist loops**, and **undo-redo** structures
@@ -42,7 +63,7 @@ Head ⇄ [Prev | Data | Next] ⇄ [Prev | Data | Next] ⇄ ... ⇄ [Prev | Data 
 ## Disadvantage
 - More memory required due to extra pointer
 - More pointer adjustments needed during insertion and deletion
-- Slightly more complex than Singly Circular Linked List
+- Slightly more complex than **Singly Circular Linked List**
 
 ## Application
 - Music/Video Playlist with forward-backward navigation  

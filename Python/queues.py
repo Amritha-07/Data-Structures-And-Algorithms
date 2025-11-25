@@ -23,8 +23,8 @@ class Queue:
 
 queue = Queue()
 while(1):
-	print("\n0.EXIT\n1.ENQUEUE\n2.DEQUEUE\n3.PEEK\n4.IS EMPTY\n5.SIZE")
-	option = int(input("\nOPTION: "))
+	print("\n0. Exit\n1. Enqueue\n2. Dequeue\n3. Peek\n4. Is Empty\n5. Size")
+	option = int(input("\nOption: "))
 	if option == 0:
 		break
 	match option:

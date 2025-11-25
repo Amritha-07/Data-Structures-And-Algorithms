@@ -23,8 +23,8 @@ class Stack:
 
 stack = Stack()
 while(1):
-	print("\n0.EXIT\n1.PUSH\n2.POP\n3.PEEK\n4.IS EMPTY\n5.SIZE")
-	option = int(input("\nOPTION: "))
+	print("\n0. Exit\n1. Push\n2. Pop\n3. Peek\n4. Is Empty\n5. Size")
+	option = int(input("\nOption: "))
 	if option == 0:
 		break
 	match option:

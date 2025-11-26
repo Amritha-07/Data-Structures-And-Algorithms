@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
-class Node {
+class DNode {
     public int data;
-    public Node previous;
-    public Node next;
+    public DNode previous;
+    public DNode next;
 
-    public Node(int data) {
+    public DNode(int data) {
         this.data = data;
         this.previous = null;
         this.next = null;
@@ -13,11 +13,11 @@ class Node {
 }
 
 class DoublyLinkedListData {
-    public Node head = null;
-    public Node tail = null;
+    public DNode head = null;
+    public DNode tail = null;
 
     public String insertAtBeginning(int element) {
-        Node newNode = new Node(element);
+        DNode newNode = new DNode(element);
         if (isEmpty()) {
             head = newNode;
             tail = newNode;
@@ -42,7 +42,7 @@ class DoublyLinkedListData {
     }
 
     public String insertAtEnding(int element) {
-        Node newNode = new Node(element);
+        DNode newNode = new DNode(element);
         if (isEmpty()) {
             head = newNode;
             tail = newNode;
@@ -68,8 +68,8 @@ class DoublyLinkedListData {
 
     public String insertAfterData(int element, int data) {
         if (isEmpty()) return "Linked List is Empty";
-        Node newNode = new Node(element);
-        Node curr = head;
+        DNode newNode = new DNode(element);
+        DNode curr = head;
         while (curr != null) {
             if (curr.data == data) {
                 newNode.previous = curr;
@@ -86,7 +86,7 @@ class DoublyLinkedListData {
 
     public String deleteAfterData(int data) {
         if (isEmpty()) return "Linked List is Empty";
-        Node curr = head;
+        DNode curr = head;
         while (curr.next != null) {
             if (curr.data == data) {
                 curr.next = curr.next.next;
@@ -102,8 +102,8 @@ class DoublyLinkedListData {
 
     public String insertBeforeData(int element, int data) {
         if (isEmpty()) return "Linked List is Empty";
-        Node newNode = new Node(element);
-        Node curr = head;
+        DNode newNode = new DNode(element);
+        DNode curr = head;
         while (curr != null) {
             if (curr.data == data) {
                 newNode.next = curr;
@@ -121,7 +121,7 @@ class DoublyLinkedListData {
     public String deleteBeforeData(int data) {
         if (isEmpty()) return "Linked List is Empty";
         if (head.data == data) return "No element before this data";
-        Node curr = head;
+        DNode curr = head;
         while (curr != null) {
             if (curr.data == data) {
                 curr.previous = curr.previous.previous;
@@ -136,7 +136,7 @@ class DoublyLinkedListData {
 
     public String deleteData(int data) {
         if (isEmpty()) return "Linked List is Empty";
-        Node curr = head;
+        DNode curr = head;
         while (curr != null) {
             if (curr.data == data) {
                 if (curr.previous != null) curr.previous.next = curr.next;
@@ -157,7 +157,7 @@ class DoublyLinkedListData {
             System.out.println("Linked List is Empty");
             return;
         }
-        Node curr = head;
+        DNode curr = head;
         while (curr != null) {
             System.out.print(curr.data + " ");
             curr = curr.next;
@@ -170,7 +170,7 @@ class DoublyLinkedListData {
             System.out.println("Linked List is Empty");
             return;
         }
-        Node curr = tail;
+        DNode curr = tail;
         while (curr != null) {
             System.out.print(curr.data + " ");
             curr = curr.previous;
@@ -184,7 +184,7 @@ class DoublyLinkedListData {
 
     public int getLength() {
         int length = 0;
-        Node curr = head;
+        DNode curr = head;
         while (curr != null) {
             length++;
             curr = curr.next;
@@ -197,7 +197,7 @@ class DoublyLinkedListData {
             System.out.println("Linked List is Empty");
             return -1;
         }
-        Node curr = head;
+        DNode curr = head;
         while (curr != null) {
             if (curr.data == data) return data;
             curr = curr.next;
@@ -208,14 +208,14 @@ class DoublyLinkedListData {
     public String reverse() { 
         if (head == null) return "Linked List is Empty"; 
         if (head.next == null) return "Reversed"; 
-        Node curr = head; 
+        DNode curr = head; 
         while (curr != null) { 
-            Node next = curr.next; 
+            DNode next = curr.next; 
             curr.next = curr.previous; 
             curr.previous = next; 
             curr = next; 
         } 
-        Node temp = head;
+        DNode temp = head;
         head = tail;
         tail = temp;
         return "Reversed"; 

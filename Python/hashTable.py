@@ -33,8 +33,10 @@ class HashTable:
             if curr.value == value:
                 if prev == None:
                     self.table[index] = curr.next
+                    self.size -= 1
                     return "Deleted"
                 prev.next = curr.next
+                self.size -= 1
                 return "Deleted"
             prev = curr
             curr = curr.next

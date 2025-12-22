@@ -13,7 +13,6 @@ class HNode {
 
 class HashTableData {
     private int capacity;
-    private int size;
     private HNode[] hashTable;
 
     public HashTableData(int capacity) {
@@ -30,7 +29,6 @@ class HashTableData {
         HNode newNode = new HNode(value);
         if (hashTable[index] == null) {
             hashTable[index] = newNode;
-            size += 1;
             return "Inserted";
         }
         HNode curr = hashTable[index];
@@ -44,13 +42,11 @@ class HashTableData {
         HNode curr = hashTable[index];
         if (curr.data == value) {
             hashTable[index] = curr.next;
-            size -= 1;
             return "Deleted";
         }
         while (curr.next != null) {
             if (curr.next.data == value) {
                 curr.next = curr.next.next;
-                size -= 1;
                 return "Deleted";
             }
             curr = curr.next;

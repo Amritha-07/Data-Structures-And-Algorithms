@@ -18,8 +18,8 @@ public class Dijkstra {
             if(d > dist[u]) continue;
 
             for(int[] p: adjList.get(u)) {
-                int v = p[1];
-                int w = p[0];
+                int v = p[0];
+                int w = p[1];
                 
                 if(dist[u] + w < dist[v]) {
                     dist[v] = dist[u] + w;
